@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Read</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div style="overflow-x:auto; ">
+
+<table border="10px" class= "table table-striped table-bordered table-sm">
+ <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th> Gender</th>
+    <th>Phone</th>
+     <th>Action</th>
+  </tr>
+    {% for i in form %}
+    <tr>
+        <td>{{i.F_Name}}</td>
+        <td>{{i.L_Name}}</td>
+        <td>{{i.Email}}</td>
+        <td>{{i.Gender}}</td>
+        <td>{{i.Phone}}</td>
+        <td> <a href="/update/{{i.id}}">Update {{i.id}}</a> <a href="/delete/{{i.id}}" style="color:red ">Remove : {{i.id}}</a><a href="/edit/{{i.id}}" style="color:Orange "> Edit: {{i.id}}</a></td>
+
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+        <a href="/insert/"> <button class="btn btn-primary">Add values</button></a>
+
+
+</div>
+
+
+</body>
+</html>
